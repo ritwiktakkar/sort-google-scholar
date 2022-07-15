@@ -1,0 +1,13 @@
+Adding the function below to ~/.zshrc lets me use the sort-google-scholar program like so:
+sortgs <keyword>
+
+sortgs(){
+    echo Going to sort-google-scholar directory and activating sortgs env...
+    cd /Users/ricky/Documents/GitHub/sort-google-scholar;
+    conda activate sortgs;
+    echo Running sort-google-scholar for keyword $*...
+    python sortgs.py --kw "$*" --sortby "cit/year"
+    conda deactivate
+    cd ~
+    echo Back to the ~ directory.
+}%                
